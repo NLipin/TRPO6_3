@@ -4,3 +4,13 @@ script:
   - cd PythonApplication1
   - pytest
   - cd ..
+  
+deploy:
+  provider: releases
+  prerelease: true
+  api_key: $GITHUB_TOKEN
+  skip_cleanup: true
+  on:
+    repo: NLipin/TRPO6_3
+    branch: dev
+    tags: true
